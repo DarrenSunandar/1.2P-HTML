@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    color: blue;
+  }
+  header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  nav {
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+  }
+  .container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+    }
+    nav a {
+      padding: 5px 0;
+    }
+    .container {
+      padding: 10px;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Responsive Web Design</h1>
+  </header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </nav>
+  <div class="container">
+    <h2>Welcome to my Website</h2>
+    <img src="waterfall-7962263_1280.jpg" alt="Sample Image">
+  </div>
+
+  <div class="container">
+    <h2>JavaScript Examples</h2>
+    <pre id="output"></pre>
+  </div>
+
+  <script>
+    // String methods
+    const str = 'Hello, World!';
+    const strOutput = `  
+      Length: ${str.length}
+      Uppercase: ${str.toUpperCase()}
+      Lowercase: ${str.toLowerCase()}
+      Substring: ${str.substring(0, 5)}
+      Index of "World": ${str.indexOf('World')}
+    `;
+
+    // Number methods
+    const num = 123.456;
+    const numOutput = `
+      Fixed to 2 decimals: ${num.toFixed(2)}
+      Exponential notation: ${num.toExponential()}
+      Rounded: ${Math.round(num)}
+      Square root: ${Math.sqrt(num)}
+      Random number between 0 and 1: ${Math.random()}
+    `;
+
+    // Array methods
+    const arr = ['avocado', 'banana', 'strawberry', 42, 7];
+    const arrOutput = `
+      Length: ${arr.length}
+      Joined: ${arr.join(', ')}
+      First element: ${arr[0]}
+      Index of banana: ${arr.indexOf('banana')}
+      Filtered numbers: ${arr.filter(item => typeof item === 'number')}
+    `;
+
+    // Date methods
+    const now = new Date();
+    const dateOutput = `
+      Current date and time: ${now.toString()}
+      Year: ${now.getFullYear()}
+      Month: ${now.getMonth() + 1}
+      Day of the week: ${now.getDay()}
+      Milliseconds since 1970: ${now.getTime()}
+    `;
+
+    // Function methods
+    function greet(name) {
+      return 'Hello, ' + name + '!';
+    }
+    const greetFunc = new Function('name', 'return "Hi, " + name + "!";');
+    const functionOutput = `
+      Greet function: ${greet('Darren')}
+      Greet function (dynamic): ${greetFunc('Michelle')}
+    `;
+
+    const outputElement = document.getElementById('output');
+    outputElement.innerHTML = `
+      ${strOutput}
+      <br><br>
+      ${numOutput}
+      <br><br>
+      ${arrOutput}
+      <br><br>
+      ${dateOutput}
+      <br><br>
+      ${functionOutput}
+    `;
+  </script>
+</body>
+</html>
